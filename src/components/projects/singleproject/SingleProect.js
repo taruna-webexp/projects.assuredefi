@@ -70,7 +70,7 @@ export default function SingleProject() {
           </div>
         </div> */}
         <div className="h-screen w-full absolute -z-10">
-          {/* <div className="h-full w-full relative">
+          <div className="h-full w-full relative">
             <Image
               alt="star-with-rectangle"
               src="/assets/backgrounds/star-with-rectangle-left.png"
@@ -78,7 +78,7 @@ export default function SingleProject() {
               className="object-contain object-right-bottom"
               quality={100}
             />
-          </div> */}
+          </div>
         </div>
         {/* end here */}
 
