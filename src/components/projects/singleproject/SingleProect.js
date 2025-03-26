@@ -14,6 +14,7 @@ import TradingView from "./TradingView";
 import ThirdPartyAudits from "./ThirdPartyAudits";
 import DeatailSkeleton from "@/components/skeleton/DetailSkeleton";
 import CertificateModal from "../modal/CertificateModal";
+import { useParams } from "next/navigation";
 export default function SingleProject() {
   const { slug } = useParams();
   const {
