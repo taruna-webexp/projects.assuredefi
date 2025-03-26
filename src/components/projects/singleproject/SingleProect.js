@@ -155,11 +155,11 @@ export default function SingleProject() {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <TradingView />
+                  {/* <TradingView /> */}
                   <div className="xl:hidden sm:block hidden">
-                    <AuditScore />
+                    {/* <AuditScore /> */}
                   </div>
-                  <ThirdPartyAudits audits={audits} />
+                  {/* <ThirdPartyAudits audits={audits} /> */}
                 </div>
               </div>
             </div>
