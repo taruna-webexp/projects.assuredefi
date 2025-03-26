@@ -1,7 +1,8 @@
 import Image from "next/image";
+import SocialIcon from "../new-design/SocialIcon";
 import { format } from "date-fns";
-
-import SocialIcon from "../singleproject/SingleProject-design/SocialIcon";
+import { faMedium } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // ✅ Social Links Component
 

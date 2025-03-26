@@ -1,5 +1,8 @@
 "use client";
+
+import Image from "next/image";
 import React, { useState } from "react";
+import CheckFill from "../../../../public/assets/icons/check-fill.svg";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { cn } from "@/lib/utils";
 
