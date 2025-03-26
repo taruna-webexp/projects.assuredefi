@@ -1,31 +1,29 @@
-import Network from "../../../../public/assets/icons/network.svg";
-import X from "../../../../public/assets/icons/x.svg";
-import Telegram from "../../../../public/assets/icons/telegram.svg";
-import Discord from "../../../../public/assets/icons/discord.svg";
+import Image from "next/image";
 import { format } from "date-fns";
-import SocialIcon from "../singleproject/SingleProject-design/SocialIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMedium } from "@fortawesome/free-brands-svg-icons";
-// import { format } from "prettier";
 
-// Social Links Component
+import SocialIcon from "../singleproject/SingleProject-design/SocialIcon";
+
+// ✅ Social Links Component
+
 export const renderSocialLinks = (project) => {
   const socialLinks = [
-    { link: project?.websiteLink, icon: <Network /> },
-    { link: project?.twitterLink, icon: <X /> },
-    { link: project?.telegramLink, icon: <Telegram /> },
-    { link: project?.discordLink, icon: <Discord /> },
-    {
-      link: project?.mediumLink,
-      icon: <FontAwesomeIcon icon={faMedium} className="theme-color" />,
-    },
+    { link: project?.websiteLink, icon: "/assets/icons/network.svg" },
+    { link: project?.twitterLink, icon: "/assets/icons/x.svg" },
+    { link: project?.telegramLink, icon: "/assets/icons/telegram.svg" },
+    { link: project?.discordLink, icon: "/assets/icons/discord.svg" },
   ];
 
   return socialLinks.map(
     ({ link, icon }, idx) =>
       link &&
       link !== "N/A" &&
-      link.trim() !== "" && <SocialIcon key={idx} link={link} icon={icon} />
+      link.trim() !== "" && (
+        <SocialIcon
+          key={idx}
+          link={link}
+          icon={<Image src={icon} alt="icon" width={24} height={24} />}
+        />
+      )
   );
 };
 
