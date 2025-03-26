@@ -14,7 +14,6 @@ import TradingView from "./TradingView";
 import ThirdPartyAudits from "./ThirdPartyAudits";
 import DeatailSkeleton from "@/components/skeleton/DetailSkeleton";
 import CertificateModal from "../modal/CertificateModal";
-import { useParams } from "next/navigation";
 export default function SingleProject() {
   const { slug } = useParams();
   const {
@@ -58,7 +57,7 @@ export default function SingleProject() {
       <div className="min-h-screen w-full relative">
         <div className="absolute inset-0 bg-project-bg -z-20 -top-20" />
         {/* background rectangle images */}
-        <div className="h-[calc(100vh+80px)] w-full absolute -top-20 -z-10 xl:block hidden">
+        {/* <div className="h-[calc(100vh+80px)] w-full absolute -top-20 -z-10 xl:block hidden">
           <div className="h-full w-full relative">
             <Image
               alt="arch-with-rectangle"
@@ -68,9 +67,9 @@ export default function SingleProject() {
               quality={100}
             />
           </div>
-        </div>
+        </div> */}
         <div className="h-screen w-full absolute -z-10">
-          <div className="h-full w-full relative">
+          {/* <div className="h-full w-full relative">
             <Image
               alt="star-with-rectangle"
               src="/assets/backgrounds/star-with-rectangle-left.png"
@@ -78,7 +77,7 @@ export default function SingleProject() {
               className="object-contain object-right-bottom"
               quality={100}
             />
-          </div>
+          </div> */}
         </div>
         {/* end here */}
 
@@ -117,15 +116,13 @@ export default function SingleProject() {
                 filter: "drop-shadow(0px 4px 40px #070711)",
               }}
             >
-              {/* half borders effects start*/}
               <div className="absolute inset-0 border-t-[3px] border-t-[#d6c641]"></div>
               <div className="absolute inset-0 project-detail-left-border"></div>
               <div className="absolute inset-0 project-detail-right-border"></div>
               <div className="absolute size-7 top-0 left-0 border-l-[3px] border-t-[3px] rounded-tl-3xl z-[1] border-l-[#d6c641] border-t-[#d6c641]" />
               <div className="absolute size-7 top-0 right-0 border-r-[3px] border-t-[3px] rounded-tr-3xl z-[1] border-r-[#d6c641] border-t-[#d6c641]" />
-              {/* half borders effects end */}
 
-              <div className="grid xl:grid-cols-2 gap-4">
+              {/* <div className="grid xl:grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="w-full flex gap-4">
                     <div className="xl:col-span-4 lg:col-span-5 col-span-4 flex-1 flex">
@@ -165,7 +162,7 @@ export default function SingleProject() {
                   </div>
                   <ThirdPartyAudits audits={audits} />
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
