@@ -139,10 +139,10 @@ export default function SingleProject() {
                     </div>
                   </div>
 
-                  {/* <KYCVerification
+                  <KYCVerification
                     project={project}
                     handleCertificateModalOpen={handleCertificateModalOpen}
-                  /> */}
+                  />
 
                   <div className="sm:hidden block">{/* <KYCDate /> */}</div>
 
