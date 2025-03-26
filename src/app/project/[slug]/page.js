@@ -1,4 +1,5 @@
-import SingleProject from "@/components/projects/SingleProect";
+import SingleProject from "@/components/projects/singleproject/SingleProect";
+
 //Title
 export function generateMetadata({ params }) {
   const capitalizeFirstLetter = (str) =>
