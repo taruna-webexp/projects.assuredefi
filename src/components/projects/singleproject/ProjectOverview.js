@@ -7,13 +7,13 @@ const ProjectOverview = ({ project }) => {
     <Card className="sm:p-8 p-4 w-full">
       <div className="space-y-5">
         <div className="flex items-center gap-3.5">
-          <div className="size-12 rounded-full relative">
+          {/* <div className="size-12 rounded-full relative">
             <Image
               alt="destra-network"
               src="/assets/icons/destra-network.png"
               fill
             />
-          </div>
+          </div> */}
           <div className="!size-12 !rounded-full relative">
             <Image
               width={25}
