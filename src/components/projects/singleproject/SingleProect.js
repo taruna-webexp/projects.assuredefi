@@ -127,7 +127,7 @@ export default function SingleProject() {
                 <div className="space-y-4">
                   <div className="w-full flex gap-4">
                     <div className="xl:col-span-4 lg:col-span-5 col-span-4 flex-1 flex">
-                      {/* <ProjectOverview project={project} /> */}
+                      <ProjectOverview project={project} />
                     </div>
                     <div className="flex-shrink-0 sm:block hidden">
                       {/* <KYCDate
