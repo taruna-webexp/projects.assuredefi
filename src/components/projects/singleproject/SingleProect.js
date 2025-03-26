@@ -123,7 +123,7 @@ export default function SingleProject() {
               <div className="absolute size-7 top-0 left-0 border-l-[3px] border-t-[3px] rounded-tl-3xl z-[1] border-l-[#d6c641] border-t-[#d6c641]" />
               <div className="absolute size-7 top-0 right-0 border-r-[3px] border-t-[3px] rounded-tr-3xl z-[1] border-r-[#d6c641] border-t-[#d6c641]" />
 
-              {/* <div className="grid xl:grid-cols-2 gap-4">
+              <div className="grid xl:grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="w-full flex gap-4">
                     <div className="xl:col-span-4 lg:col-span-5 col-span-4 flex-1 flex">
@@ -139,31 +139,29 @@ export default function SingleProject() {
                     </div>
                   </div>
 
-                  <KYCVerification
+                  {/* <KYCVerification
                     project={project}
                     handleCertificateModalOpen={handleCertificateModalOpen}
-                  />
+                  /> */}
 
-                  <div className="sm:hidden block">
-                    <KYCDate />
-                  </div>
+                  <div className="sm:hidden block">{/* <KYCDate /> */}</div>
 
                   <div className="xl:block hidden">
-                    <AuditScore project={project} />
+                    {/* <AuditScore project={project} /> */}
                   </div>
 
                   <div className="sm:hidden block">
-                    <AuditScore project={project} />
+                    {/* <AuditScore project={project} /> */}
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <TradingView />
+                  {/* <TradingView /> */}
                   <div className="xl:hidden sm:block hidden">
-                    <AuditScore />
+                    {/* <AuditScore /> */}
                   </div>
-                  <ThirdPartyAudits audits={audits} />
+                  {/* <ThirdPartyAudits audits={audits} /> */}
                 </div>
-              </div> */}
+              </div>
             </div>
           )}
         </div>
