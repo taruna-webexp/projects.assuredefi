@@ -130,12 +130,12 @@ export default function SingleProject() {
                       <ProjectOverview project={project} />
                     </div>
                     <div className="flex-shrink-0 sm:block hidden">
-                      {/* <KYCDate
+                      <KYCDate
                         project={project}
                         handleCertificateImgModalOpen={
                           handleCertificateImgModalOpen
                         }
-                      /> */}
+                      />
                     </div>
                   </div>
 
