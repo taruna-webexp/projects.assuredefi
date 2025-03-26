@@ -4,6 +4,7 @@ import Card from "./SingleProject-design/Card";
 import Accordion from "./SingleProject-design/Accordion";
 import { Warning } from "@mui/icons-material";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 const ThirdPartyAudits = ({ audits }) => {
   return (
     <Card
@@ -15,7 +16,12 @@ const ThirdPartyAudits = ({ audits }) => {
     >
       <div className="flex items-center justify-between gap-2 p-4 border-b border-b-[#423f8480]">
         <div className="flex items-center gap-2">
-          {/* <Shield /> */}
+          <Image
+            src="/assets/icons/shield.svg"
+            alt="Shield Icon"
+            width={24}
+            height={24}
+          />
           <p className="capitalize font-bold sm:text-base text-sm text-white">
             3rd party audits
           </p>
@@ -43,7 +49,12 @@ const ThirdPartyAudits = ({ audits }) => {
                 {["alert", "information"].includes(audit.status) ? (
                   <Warning className="size-5" />
                 ) : (
-                  ""
+                  <Image
+                    src="/assets/icons/check-fill.svg"
+                    alt="Shield Icon"
+                    width={24}
+                    height={24}
+                  />
                 )}{" "}
                 {audit.count}
               </div>
