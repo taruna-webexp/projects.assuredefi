@@ -130,36 +130,36 @@ export default function SingleProject() {
                       {/* <ProjectOverview project={project} /> */}
                     </div>
                     <div className="flex-shrink-0 sm:block hidden">
-                      <KYCDate
+                      {/* <KYCDate
                         project={project}
                         handleCertificateImgModalOpen={
                           handleCertificateImgModalOpen
                         }
-                      />
+                      /> */}
                     </div>
                   </div>
 
-                  <KYCVerification
+                  {/* <KYCVerification
                     project={project}
                     handleCertificateModalOpen={handleCertificateModalOpen}
-                  />
+                  /> */}
 
                   <div className="sm:hidden block">{/* <KYCDate /> */}</div>
 
                   <div className="xl:block hidden">
-                    <AuditScore project={project} />
+                    {/* <AuditScore project={project} /> */}
                   </div>
 
                   <div className="sm:hidden block">
-                    <AuditScore project={project} />
+                    {/* <AuditScore project={project} /> */}
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <TradingView />
+                  {/* <TradingView /> */}
                   <div className="xl:hidden sm:block hidden">
-                    <AuditScore />
+                    {/* <AuditScore /> */}
                   </div>
-                  <ThirdPartyAudits audits={audits} />
+                  {/* <ThirdPartyAudits audits={audits} /> */}
                 </div>
               </div>
             </div>
