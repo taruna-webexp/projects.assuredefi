@@ -1,14 +1,14 @@
 import { Warning } from "@mui/icons-material";
-import LocationPin from "../../../../public/assets/icons/location-pin.svg";
-import Card from "./SingleProject-design/Card";
 import Image from "next/image";
+import Link from "next/link";
+import Card from "./SingleProject-design/Card";
 import CheckFill from "../../../../public/assets/icons/check-fill.svg";
 import GradientButton from "./SingleProject-design/GradientButton";
-import Link from "next/link";
 import Accordion from "./SingleProject-design/Accordion";
 import CountryTier from "../modal/CountryTier";
 import { renderControlOver } from "../varificationdetail/KycDetailData";
 import SocialLinks from "@/components/Sociallinks/SocialLinks";
+
 const KYCVerification = ({ project, handleCertificateModalOpen }) => {
   return (
     <div className="relative">
@@ -37,7 +37,6 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Certificate Button */}
             {project?.kycCertificate && (
               <GradientButton
                 className="button-under-kyc"
@@ -46,14 +45,13 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                 Certificate
               </GradientButton>
             )}
-            {/* NFT Button */}
+
             {project?.nftUrl && (
               <Link href={project.nftUrl} target="_blank">
                 <GradientButton>NFT</GradientButton>
               </Link>
             )}
           </div>
-          {/* )} */}
         </div>
 
         {project?.kycStatus === "Approved" && (
@@ -64,10 +62,11 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                 title={
                   <div className="flex items-center gap-1.5">
                     <div className="relative size-4">
-                      <img
+                      <Image
                         src="/assets/verified-beg.png"
-                        className="w-8"
                         alt="verified"
+                        width={32}
+                        height={32}
                       />
                     </div>
                     <p className="sm:text-lg text-sm font-normal text-[#DDCC42]">
@@ -95,7 +94,12 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                     ),
                     details: (
                       <div className="flex items-center gap-px">
-                        <LocationPin />
+                        <Image
+                          src="/assets/icons/location-pin.svg"
+                          alt="location"
+                          width={16}
+                          height={16}
+                        />
                         <span className="text-sm font-bold text-white">
                           Tier {verifiy.countryTier || ""}
                         </span>
@@ -106,7 +110,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                     title: "Verified socials:",
                     details: (
                       <div className="flex items-center gap-3.5">
-                        {/* <SocialLinks verifiy={verifiy} /> */}
+                        <SocialLinks verifiy={verifiy} />
                       </div>
                     ),
                   },
@@ -116,6 +120,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
           </div>
         )}
       </Card>
+
       {project?.kycStatus !== "Approved" && (
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <button
@@ -132,4 +137,5 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
     </div>
   );
 };
+
 export default KYCVerification;
