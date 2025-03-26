@@ -2,7 +2,9 @@ import { Warning } from "@mui/icons-material";
 import Image from "next/image";
 import Link from "next/link";
 import Card from "./SingleProject-design/Card";
-import CheckFill from "../../../../public/assets/icons/check-fill.svg";
+
+import CheckFill from "../../../../public/assets/icons/check-fill.svg?react";
+
 import GradientButton from "./SingleProject-design/GradientButton";
 import Accordion from "./SingleProject-design/Accordion";
 import CountryTier from "../modal/CountryTier";
