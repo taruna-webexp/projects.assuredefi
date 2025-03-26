@@ -144,7 +144,7 @@ export default function SingleProject() {
                     handleCertificateModalOpen={handleCertificateModalOpen}
                   />
 
-                  <div className="sm:hidden block">{/* <KYCDate /> */}</div>
+                  {/* <div className="sm:hidden block"><KYCDate /></div> */}
 
                   <div className="xl:block hidden">
                     {/* <AuditScore project={project} /> */}
