@@ -106,7 +106,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                     title: "Verified socials:",
                     details: (
                       <div className="flex items-center gap-3.5">
-                        <SocialLinks verifiy={verifiy} />
+                        {/* <SocialLinks verifiy={verifiy} /> */}
                       </div>
                     ),
                   },
