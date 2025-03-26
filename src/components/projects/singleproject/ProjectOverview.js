@@ -45,7 +45,7 @@ const ProjectOverview = ({ project }) => {
         <p className="text-sm font-normal text-white">{project?.description}</p>
 
         <div className="flex items-center gap-2">
-          {/* {renderSocialLinks(project)} */}
+          {renderSocialLinks(project)}
         </div>
       </div>
     </Card>
