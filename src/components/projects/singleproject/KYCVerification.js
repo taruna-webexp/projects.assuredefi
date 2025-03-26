@@ -27,11 +27,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
         <div className="flex items-center justify-between gap-2 p-4 border-b border-b-[#423f8480] flex-wrap">
           <div className="flex items-center gap-2">
             <div className="relative size-6">
-              <Image
-                alt="contact"
-                src="/assets/icons/contact-shield.png"
-                fill
-              />
+              <Image alt="contact" src="/assets/icons/contact-shield.png" />
             </div>
             <p className="capitalize font-bold sm:text-base text-sm text-white">
               KYC Verification
