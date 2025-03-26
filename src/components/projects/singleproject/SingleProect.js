@@ -88,7 +88,7 @@ export default function SingleProject() {
             style={{ filter: "blur(300px)" }}
           />
 
-          {/* <div className="space-y-4">
+          <div className="space-y-4">
             <h2 className="text-5xl font-bold text-center text-gradient">
               {project?.projectName}
             </h2>
@@ -107,7 +107,7 @@ export default function SingleProject() {
                 Back to projects
               </Link>
             </div>
-          </div> */}
+          </div>
           {isSingleProjectLoading ? (
             <DeatailSkeleton />
           ) : (
