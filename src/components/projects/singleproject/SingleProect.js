@@ -159,7 +159,7 @@ export default function SingleProject() {
                   <div className="xl:hidden sm:block hidden">
                     {/* <AuditScore /> */}
                   </div>
-                  {/* <ThirdPartyAudits audits={audits} /> */}
+                  <ThirdPartyAudits audits={audits} />
                 </div>
               </div>
             </div>

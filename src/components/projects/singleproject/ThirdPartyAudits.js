@@ -1,6 +1,6 @@
 import Card from "./SingleProject-design/Card";
-import Shield from "../../../../public/assets/icons/shield.svg";
-import CheckFill from "../../../../public/assets/icons/check-fill.svg";
+// import Shield from "../../../../public/assets/icons/shield.svg";
+// import CheckFill from "../../../../public/assets/icons/check-fill.svg";
 import Accordion from "./SingleProject-design/Accordion";
 import { Warning } from "@mui/icons-material";
 import { cn } from "@/lib/utils";
@@ -15,7 +15,7 @@ const ThirdPartyAudits = ({ audits }) => {
     >
       <div className="flex items-center justify-between gap-2 p-4 border-b border-b-[#423f8480]">
         <div className="flex items-center gap-2">
-          <Shield />
+          {/* <Shield /> */}
           <p className="capitalize font-bold sm:text-base text-sm text-white">
             3rd party audits
           </p>
@@ -43,7 +43,7 @@ const ThirdPartyAudits = ({ audits }) => {
                 {["alert", "information"].includes(audit.status) ? (
                   <Warning className="size-5" />
                 ) : (
-                  <CheckFill className="shrink-0" />
+                  ""
                 )}{" "}
                 {audit.count}
               </div>
