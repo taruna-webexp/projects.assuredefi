@@ -58,7 +58,7 @@ export default function SingleProject() {
       <div className="min-h-screen w-full relative">
         <div className="absolute inset-0 bg-project-bg -z-20 -top-20" />
         {/* background rectangle images */}
-        {/* <div className="h-[calc(100vh+80px)] w-full absolute -top-20 -z-10 xl:block hidden">
+        <div className="h-[calc(100vh+80px)] w-full absolute -top-20 -z-10 xl:block hidden">
           <div className="h-full w-full relative">
             <Image
               alt="arch-with-rectangle"
@@ -68,7 +68,7 @@ export default function SingleProject() {
               quality={100}
             />
           </div>
-        </div> */}
+        </div>
         <div className="h-screen w-full absolute -z-10">
           <div className="h-full w-full relative">
             <Image
