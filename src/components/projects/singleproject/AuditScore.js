@@ -2,8 +2,8 @@ import Image from "next/image";
 import Card from "./SingleProject-design/Card";
 import ContractAdress from "../varificationdetail/ContractAdress";
 import GradientButton from "./SingleProject-design/GradientButton";
-import Github from "../../../../public/assets/icons/github.svg";
-import PdfFill from "../../../../public/assets/icons/pdf-fill.svg";
+// import Github from "../../../../public/assets/icons/github.svg";
+// import PdfFill from "../../../../public/assets/icons/pdf-fill.svg";
 import { BlockChainImages } from "../BlockChainImages";
 const AuditScore = ({ project }) => {
   return project?.auditReportList?.length > 0 ? (
@@ -83,7 +83,8 @@ const AuditScore = ({ project }) => {
                 <GradientButton
                   onClick={() => window.open(report.githubReportLink, "_blank")}
                 >
-                  <Github /> Github
+                  {/* <Github /> */}
+                  Github
                 </GradientButton>
 
                 {report.initialAuditReport &&
@@ -92,7 +93,7 @@ const AuditScore = ({ project }) => {
                       key={audit.url}
                       onClick={() => window.open(audit.url, "_blank")}
                     >
-                      <PdfFill />
+                      {/* <PdfFill /> */}
                       {idx + 1} Initial Report
                     </GradientButton>
                   ))}
@@ -102,7 +103,7 @@ const AuditScore = ({ project }) => {
                       window.open(report.finalAuditReport[0].url, "_blank")
                     }
                   >
-                    <PdfFill />
+                    {/* <PdfFill /> */}
                     Final Report
                   </GradientButton>
                 )}
