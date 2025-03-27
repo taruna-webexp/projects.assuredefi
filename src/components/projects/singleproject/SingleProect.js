@@ -155,7 +155,7 @@ export default function SingleProject({ slug }) {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <TradingView />
+                  <TradingView project={project} />
                   <div className="xl:hidden sm:block hidden">
                     <AuditScore />
                   </div>

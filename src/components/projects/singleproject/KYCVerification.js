@@ -102,11 +102,11 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                       <div className="flex items-center gap-px">
                         {/* <LocationPin /> */}
                         <Image
-                      src="/assets/icons/location-pin.svg"
-                      alt="Shield Icon"
-                      width={24}
-                      height={24}
-                    />
+                          src="/assets/icons/location-pin.svg"
+                          alt="Shield Icon"
+                          width={24}
+                          height={24}
+                        />
                         <span className="text-sm font-bold text-white">
                           Tier {verifiy.countryTier || ""}
                         </span>
@@ -117,7 +117,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                     title: "Verified socials:",
                     details: (
                       <div className="flex items-center gap-3.5">
-                        {/* <SocialLinks verifiy={verifiy} /> */}
+                        <SocialLinks verifiy={verifiy} />
                       </div>
                     ),
                   },

@@ -1,77 +1,38 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import Card from "./SingleProject-design/Card";
+import FolderChart from "../../../../public/assets/icons/folder-chart-fill.svg";
+import UpArrow from "../../../../public/assets/icons/up-arrow.svg";
+import DownArrow from "../../../../public/assets/icons/down-arrow.svg";
+
 import {
-  AreaChart,
   Area,
-  XAxis,
-  YAxis,
+  AreaChart,
   CartesianGrid,
-  Tooltip,
   ResponsiveContainer,
+  Tooltip,
+  XAxis,
 } from "recharts";
 import CustomTooltip from "./CustomTooltip";
-import Image from "next/image";
-import { blockchainNames } from "../BlockChainImages";
-import Card from "./SingleProject-design/Card";
+import {
+  crypto1D,
+  crypto1M,
+  crypto1Y,
+  crypto3M,
+  crypto7D,
+} from "@/data/project";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
-
-const TradingView = ({ project }) => {
-  console.log("project.data", project);
-  // {blockchainNames[project.blockchain[0]] ||
-  //                           project.blockchain[0]}
-  const [dataMap, setDataMap] = useState({
-    "1D": [],
-    "7D": [],
-    "1M": [],
-    "3M": [],
-    "1Y": [],
-  });
-  const [activeFilter, setActiveFilter] = useState("1D");
-  const [overViewData, setOverViewData] = useState([]);
-
-  // Memoize the blockchain name to prevent unnecessary recalculations
-  const chainName = useMemo(() => {
-    return blockchainNames[project.blockchain[0]] || project.blockchain[0];
-  }, [project.blockchain]);
-
-  const fetchMarketCap = async () => {
-    try {
-      const chainId = chainName.charAt(0).toLowerCase() + chainName.slice(1);
-      const pairId = project.contractAddress;
-
-      const res = await fetch(
-        "https://api.dexscreener.com/latest/dex/pairs/solana/h9d3xhfvmgfoohydepqh4w3mopnvjcrze9vqaihkdqs7"
-      );
-      const json = await res.json();
-      console.log("API Response:", json);
-      setOverViewData(json?.pairs?.[0]);
-      const priceChange = json?.pairs?.[0]?.priceChange;
-
-      if (priceChange) {
-        const formattedData = {
-          "1D": [
-            { time: "00:00", price: 0 },
-            { time: "04:00", price: priceChange.m5 },
-            { time: "08:00", price: priceChange.h1 },
-            { time: "12:00", price: priceChange.h6 },
-            { time: "16:00", price: priceChange.h24 },
-            { time: "20:00", price: priceChange.h24 },
-            { time: "23:59", price: priceChange.h24 },
-          ],
-        };
-
-        setDataMap(formattedData);
-        activeFilter("1d");
-      }
-    } catch (error) {
-      console.error("Error fetching market cap:", error);
-    }
+import Image from "next/image";
+const TradingView = () => {
+  const dataMap = {
+    "1d": crypto1D,
+    "7d": crypto7D,
+    "1m": crypto1M,
+    "3m": crypto3M,
+    "1y": crypto1Y,
   };
 
-  useEffect(() => {
-    fetchMarketCap();
-  }, []);
-  console.log("OVERVIEW", overViewData);
+  const [activeFilter, setActiveFilter] = useState("1m");
 
   return (
     <Card
@@ -98,15 +59,12 @@ const TradingView = ({ project }) => {
           Via Pancake Swap
         </p>
       </div>
+
       <div className="px-3 py-6 space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <p className="text-xl font-bold text-white">
-            {overViewData?.priceUsd}
-
-            <span className="text-[#F66262] text-sm font-semibold">
-              {" "}
-              {overViewData?.priceChange?.h24}{" "}
-            </span>
+            $0.00547531{" "}
+            <span className="text-[#F66262] text-sm font-semibold">-7.60%</span>
           </p>
           <div className="flex items-center gap-3">
             {["1d", "7d", "1m", "3m", "1y", "ytd"].map((filter) => (
@@ -129,6 +87,7 @@ const TradingView = ({ project }) => {
             <AreaChart
               data={dataMap[activeFilter]}
               margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
+              {...{ overflow: "visible" }}
             >
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -145,7 +104,7 @@ const TradingView = ({ project }) => {
               />
               <CartesianGrid
                 strokeDasharray="10 10"
-                horizontal
+                horizontal={true}
                 vertical={false}
                 stroke="#3E3E3E"
               />
@@ -160,41 +119,38 @@ const TradingView = ({ project }) => {
             </AreaChart>
           </ResponsiveContainer>
         </div>
+
         <div className="grid grid-cols-2 gap-2.5">
-          <a href={overViewData?.url} target="_blank" rel="noopener noreferrer">
-            <button
-              className="w-full border border-[#5EDE99] rounded-md flex items-center gap-2 text-base font-bold text-white p-3.5 justify-center"
-              style={{
-                background:
-                  "linear-gradient(0deg, rgba(0, 0, 0, 0.00) 9.38%, rgba(255, 255, 255, 0.30) 100%), #143523",
-              }}
-            >
-              <Image
-                src="/assets/icons/up-arrow.svg"
-                alt="Shield Icon"
-                width={24}
-                height={24}
-              />
-              Buy
-            </button>
-          </a>
-          <a href={overViewData?.url} target="_blank" rel="noopener noreferrer">
-            <button
-              className="w-full border border-[#F66262] rounded-md flex items-center gap-2 text-base font-bold text-white p-3.5 justify-center"
-              style={{
-                background:
-                  "linear-gradient(180deg, #F66262 -53.12%, #180909 50%)",
-              }}
-            >
-              <Image
-                src="/assets/icons/down-arrow.svg"
-                alt="Shield Icon"
-                width={24}
-                height={24}
-              />
-              Sell
-            </button>
-          </a>
+          <button
+            className="w-full border border-[#5EDE99] rounded-md flex items-center gap-2 text-base font-bold text-white p-3.5 justify-center"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.00) 9.38%, rgba(255, 255, 255, 0.30) 100%), #143523",
+            }}
+          >
+            <Image
+              src="/assets/icons/up-arrow.svg"
+              alt="Shield Icon"
+              width={24}
+              height={24}
+            />
+            Buy
+          </button>
+          <button
+            className="w-full border border-[#F66262] rounded-md flex items-center gap-2 text-base font-bold text-white p-3.5 justify-center"
+            style={{
+              background:
+                "linear-gradient(180deg, #F66262 -53.12%, #180909 50%)",
+            }}
+          >
+            <Image
+              src="/assets/icons/down-arrow.svg"
+              alt="Shield Icon"
+              width={24}
+              height={24}
+            />
+            Sell
+          </button>
         </div>
 
         <div className="space-y-3">
@@ -205,36 +161,28 @@ const TradingView = ({ project }) => {
                 <p className="text-sm font-semibold text-white opacity-50 uppercase">
                   MKT CAP
                 </p>
-                <p className="text-sm font-bold text-white">
-                  ${overViewData?.marketCap}
-                </p>
+                <p className="text-sm font-bold text-white">$8.78B</p>
               </div>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-white opacity-50 uppercase">
                   Liquidity
                 </p>
-                <p className="text-sm font-bold text-white">
-                  ${overViewData?.liquidity?.usd}
-                </p>
+                <p className="text-sm font-bold text-white">$74.6M</p>
               </div>
             </div>
 
             <div className="space-y-2.5">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-white opacity-50 uppercase">
-                  Price
+                  HOLDERS
                 </p>
-                <p className="text-sm font-bold text-white">
-                  ${overViewData?.priceUsd}
-                </p>
+                <p className="text-sm font-bold text-white">$1.2M</p>
               </div>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-white opacity-50 uppercase">
                   24H VOLUME
                 </p>
-                <p className="text-sm font-bold text-white">
-                  {overViewData?.volume?.h24}
-                </p>
+                <p className="text-sm font-bold text-white">142.K</p>
               </div>
             </div>
           </div>
@@ -243,5 +191,4 @@ const TradingView = ({ project }) => {
     </Card>
   );
 };
-
 export default TradingView;
