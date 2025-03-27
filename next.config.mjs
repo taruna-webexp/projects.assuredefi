@@ -8,14 +8,15 @@ const nextConfig = {
     ],
   },
   experimental: {
-    optimizeCss: true, // Optimize Critical CSS
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-    return config;
+    optimizeCss: true, // Critical CSS ko Automatically Optimize karega
+    turbo: {
+      rules: {
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
+        },
+      },
+    },
   },
 };
 

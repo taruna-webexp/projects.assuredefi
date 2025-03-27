@@ -9,7 +9,7 @@ export default function DeatailSkeleton() {
       <div className="absolute inset-0 bg-project-bg -z-20 -top-20" />
       <div
         className="max-w-7xl w-full relative mx-auto sm:p-8 p-6  rounded-3xl overflow-hidden"
-        //   style={{ filter: "drop-shadow(0px 4px 40pxrgb(182, 182, 238))" }}
+        //   style={{ filter: "drop-shadow(0px 4px 40pxrgb(182, 182, 238))" }}    
       >
         <div className="h-[calc(100vh+80px)] w-full absolute -top-20 -z-10 xl:block hidden">
           <div className="h-full w-full relative">

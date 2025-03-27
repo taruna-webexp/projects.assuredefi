@@ -4,7 +4,7 @@ import ContractAdress from "../varificationdetail/ContractAdress";
 import GradientButton from "./SingleProject-design/GradientButton";
 import Github from "../../../../public/assets/icons/github.svg";
 import PdfFill from "../../../../public/assets/icons/pdf-fill.svg";
-import { BlockChainImages } from "../BlockChainImages";
+import { BlockChainImages, blockchainNames } from "../BlockChainImages";
 const AuditScore = ({ project }) => {
   return project?.auditReportList?.length > 0 ? (
     project?.auditReportList.map((report, index) => {
@@ -49,7 +49,7 @@ const AuditScore = ({ project }) => {
                             className="w-5"
                             priority
                           />
-                          {BlockChainImages[project.blockchain[0]] ||
+                          {blockchainNames[project.blockchain[0]] ||
                             project.blockchain[0]}
                         </div>
                       )}
@@ -83,7 +83,12 @@ const AuditScore = ({ project }) => {
                 <GradientButton
                   onClick={() => window.open(report.githubReportLink, "_blank")}
                 >
-                  <Github />
+                  <Image
+                    src="/assets/icons/github.svg"
+                    alt="Shield Icon"
+                    width={24}
+                    height={24}
+                  />
                   Github
                 </GradientButton>
 
@@ -93,7 +98,12 @@ const AuditScore = ({ project }) => {
                       key={audit.url}
                       onClick={() => window.open(audit.url, "_blank")}
                     >
-                      <PdfFill />
+                      <Image
+                        src="/assets/icons/pdf-fill.svg"
+                        alt="Shield Icon"
+                        width={24}
+                        height={24}
+                      />
                       {idx + 1} Initial Report
                     </GradientButton>
                   ))}
@@ -103,7 +113,12 @@ const AuditScore = ({ project }) => {
                       window.open(report.finalAuditReport[0].url, "_blank")
                     }
                   >
-                    <PdfFill />
+                    <Image
+                      src="/assets/icons/pdf-fill.svg"
+                      alt="Shield Icon"
+                      width={24}
+                      height={24}
+                    />
                     Final Report
                   </GradientButton>
                 )}

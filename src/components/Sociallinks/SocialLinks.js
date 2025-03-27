@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Telegram from "../../../public/assets/icons/telegram.svg";
-import Discord from "../../../public/assets/icons/discord.svg";
-import X from "../../../public/assets/icons/x.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTelegram,
+  faDiscord,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const SocialLinks = ({ verifiy }) => {
   const socials = [];
@@ -23,7 +26,7 @@ const SocialLinks = ({ verifiy }) => {
         className="theme-color"
         aria-label="Telegram"
       >
-        <Telegram />
+        <FontAwesomeIcon className="!text-xl" icon={faTelegram} />
       </Link>
     );
   }
@@ -39,7 +42,7 @@ const SocialLinks = ({ verifiy }) => {
         className="theme-color"
         aria-label="Discord"
       >
-        <Discord />
+        <FontAwesomeIcon className="text-xl" icon={faDiscord} />
       </Link>
     );
   }
@@ -55,7 +58,7 @@ const SocialLinks = ({ verifiy }) => {
         className="theme-color"
         aria-label="Twitter"
       >
-        <X />
+        <FontAwesomeIcon className="text-xl" icon={faXTwitter} />
       </Link>
     );
   }

@@ -1,8 +1,8 @@
 "use client";
 import Card from "./SingleProject-design/Card";
-// import FolderChart from "../../../../public/assets/icons/folder-chart-fill.svg";
-// import UpArrow from "../../../../public/assets/icons/up-arrow.svg";
-// import DownArrow from "../../../../public/assets/icons/down-arrow.svg";
+import FolderChart from "../../../../public/assets/icons/folder-chart-fill.svg";
+import UpArrow from "../../../../public/assets/icons/up-arrow.svg";
+import DownArrow from "../../../../public/assets/icons/down-arrow.svg";
 
 import {
   Area,
@@ -22,6 +22,7 @@ import {
 } from "@/data/project";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 const TradingView = () => {
   const dataMap = {
     "1d": crypto1D,
@@ -43,7 +44,12 @@ const TradingView = () => {
     >
       <div className="flex items-center justify-between gap-2 p-4 border-b border-b-[#423f8480]">
         <div className="flex items-center gap-2">
-          {/* <FolderChart /> */}
+          <Image
+              src="/assets/icons/folder-chart-fill.svg"
+              alt="Shield Icon"
+              width={24}
+              height={24}
+            />
           <p className="capitalize font-bold sm:text-base text-sm text-white">
             Trading
           </p>
@@ -122,7 +128,13 @@ const TradingView = () => {
                 "linear-gradient(0deg, rgba(0, 0, 0, 0.00) 9.38%, rgba(255, 255, 255, 0.30) 100%), #143523",
             }}
           >
-            {/* <UpArrow /> Buy */}
+            <Image
+              src="/assets/icons/up-arrow.svg"
+              alt="Shield Icon"
+              width={24}
+              height={24}
+            />
+            Buy
           </button>
           <button
             className="w-full border border-[#F66262] rounded-md flex items-center gap-2 text-base font-bold text-white p-3.5 justify-center"
@@ -131,7 +143,13 @@ const TradingView = () => {
                 "linear-gradient(180deg, #F66262 -53.12%, #180909 50%)",
             }}
           >
-            {/* <DownArrow /> Sell */}
+            <Image
+              src="/assets/icons/down-arrow.svg"
+              alt="Shield Icon"
+              width={24}
+              height={24}
+            />
+            Sell
           </button>
         </div>
 

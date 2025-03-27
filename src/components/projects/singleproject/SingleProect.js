@@ -12,11 +12,9 @@ import KYCVerification from "./KYCVerification";
 import AuditScore from "./AuditScore";
 import TradingView from "./TradingView";
 import ThirdPartyAudits from "./ThirdPartyAudits";
-import DeatailSkeleton from "@/components/skeleton/DetailSkeleton";
+import DeatailSkeleton from "@/components/skeleton/DeatailSkeleton";
 import CertificateModal from "../modal/CertificateModal";
-import { useParams } from "next/navigation";
-export default function SingleProject() {
-  const { slug } = useParams();
+export default function SingleProject({ slug }) {
   const {
     project,
     singleProjecterror,
@@ -28,9 +26,7 @@ export default function SingleProject() {
 
   useEffect(() => {
     const fetchDeatailsData = () => {
-      if (slug) {
-        fetchSingleProject(slug);
-      }
+      fetchSingleProject(slug);
     };
     fetchDeatailsData();
   }, [slug]);
@@ -117,11 +113,13 @@ export default function SingleProject() {
                 filter: "drop-shadow(0px 4px 40px #070711)",
               }}
             >
+              {/* half borders effects start*/}
               <div className="absolute inset-0 border-t-[3px] border-t-[#d6c641]"></div>
               <div className="absolute inset-0 project-detail-left-border"></div>
               <div className="absolute inset-0 project-detail-right-border"></div>
               <div className="absolute size-7 top-0 left-0 border-l-[3px] border-t-[3px] rounded-tl-3xl z-[1] border-l-[#d6c641] border-t-[#d6c641]" />
               <div className="absolute size-7 top-0 right-0 border-r-[3px] border-t-[3px] rounded-tr-3xl z-[1] border-r-[#d6c641] border-t-[#d6c641]" />
+              {/* half borders effects end */}
 
               <div className="grid xl:grid-cols-2 gap-4">
                 <div className="space-y-4">
