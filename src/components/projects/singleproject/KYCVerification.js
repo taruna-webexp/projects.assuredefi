@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Card from "./SingleProject-design/Card";
 
-// import CheckFill from "../../../../public/assets/icons/check-fill.svg?react";
+import CheckFill from "../../../../public/assets/icons/check-fill.svg?react";
 
 import GradientButton from "./SingleProject-design/GradientButton";
 import Accordion from "./SingleProject-design/Accordion";
@@ -70,7 +70,7 @@ const KYCVerification = ({ project, handleCertificateModalOpen }) => {
                     <p className="sm:text-lg text-sm font-normal text-[#DDCC42]">
                       {verifiy.name || "N/A"}
                     </p>
-                    {/* <CheckFill /> */}
+                    <CheckFill />
                   </div>
                 }
                 actionTitle={verifiy.role || "N/A"}
