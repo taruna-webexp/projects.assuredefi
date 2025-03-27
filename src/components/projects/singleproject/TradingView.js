@@ -4,7 +4,6 @@ import {
   AreaChart,
   Area,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
@@ -16,9 +15,6 @@ import Card from "./SingleProject-design/Card";
 import { cn } from "@/lib/utils";
 
 const TradingView = ({ project }) => {
-  console.log("project.data", project);
-  // {blockchainNames[project.blockchain[0]] ||
-  //                           project.blockchain[0]}
   const [dataMap, setDataMap] = useState({
     "1D": [],
     "7D": [],
@@ -71,7 +67,6 @@ const TradingView = ({ project }) => {
   useEffect(() => {
     fetchMarketCap();
   }, []);
-  console.log("OVERVIEW", overViewData);
 
   return (
     <Card
@@ -109,7 +104,7 @@ const TradingView = ({ project }) => {
             </span>
           </p>
           <div className="flex items-center gap-3">
-            {["1d", "7d", "1m", "3m", "1y", "ytd"].map((filter) => (
+            {["1D", "7d", "1m", "3m", "1y", "ytd"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
