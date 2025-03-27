@@ -9,7 +9,6 @@ import GradientButton from "./SingleProject-design/GradientButton";
 import Accordion from "./SingleProject-design/Accordion";
 import CountryTier from "../modal/CountryTier";
 import { renderControlOver } from "../varificationdetail/KycDetailData";
-import SocialLinks from "@/components/Sociallinks/SocialLinks";
 
 const KYCVerification = ({ project, handleCertificateModalOpen }) => {
   return (
