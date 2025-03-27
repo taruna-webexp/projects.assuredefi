@@ -32,8 +32,8 @@ const TradingView = ({ project }) => {
 
   const fetchMarketCap = async () => {
     try {
-      const chainId = chainName.charAt(0).toLowerCase() + chainName.slice(1);
-      const pairId = project.contractAddress;
+      // const chainId = chainName.charAt(0).toLowerCase() + chainName.slice(1);
+      // const pairId = project.contractAddress;
 
       const res = await fetch(
         "https://api.dexscreener.com/latest/dex/pairs/solana/h9d3xhfvmgfoohydepqh4w3mopnvjcrze9vqaihkdqs7"
